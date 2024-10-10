@@ -4,6 +4,7 @@
     <div class="form-container">
       <form>
         <!--Image Selction Difs-->
+        <hr />
         <label>
           <div class="imageDivs">
             <input type="radio" name="ingestRadio" value="small" checked />
@@ -32,9 +33,10 @@
             <p>Pill</p>
           </div>
         </label>
+        <hr />
         <!--Text Box-->
         <br />
-        <label for="textBox">Description</label>
+        <div id="textBoxLabelDiv"><label for="textBox">Description</label></div>
         <input type="text" id="textBox" name="descriptionBox" required="true" />
         <!--Submit button-->
         <br />
@@ -53,6 +55,14 @@ export default defineComponent({
 </script>
 
 <style>
+/********PAGE**************/
+/********Form**************/
+
+.form-container {
+  display: inline-flex;
+}
+
+/********Form items******
 /* HIDE RADIO */
 [type="radio"] {
   position: absolute;
@@ -75,12 +85,6 @@ img {
   width: 200px;
 }
 
-/*
-.form-container {
-  display: inline-flex;
-}
-*/
-
 .imageDivs {
   display: inline-block;
   flex-direction: column;
@@ -90,6 +94,11 @@ img {
 
 label {
   text-align: justify;
+}
+
+/* Center the image texts that decribe the images */
+p {
+  text-align: center;
 }
 
 input[type="text"] {
@@ -121,5 +130,13 @@ input[type="button"]:hover {
 input[type="button"]:active {
   transform: scale(0.98); /* Slight press effect */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Less shadow when pressed */
+}
+
+#textBoxLabelDiv {
+  text-align: left;
+  display: inline-block;
+  flex-direction: column;
+  margin: 50px;
+  padding-block-start: 10px;
 }
 </style>

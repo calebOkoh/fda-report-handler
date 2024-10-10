@@ -14,7 +14,7 @@ header {
   background-color: #0888de; /* Color for the header */
   position: fixed;
   width: 100%;
-  max-height: 10%;
+  max-height: 6%;
 }
 
 body {
