@@ -13,6 +13,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "qr",
     component: QRScan,
   },
+  {
+    path: "/about",
+    name: "about",
+    component: () => import("../views/AboutView.vue"),
+  },
 ];
 
 const router = createRouter({

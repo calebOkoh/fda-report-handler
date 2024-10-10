@@ -1,10 +1,14 @@
 <template>
   <body>
-    <p>Compliant Form</p>
+    <p>Complaint Form for ""manifacturer"" "DrugName"</p>
+    <!--grab var with ref tag ?? -->
     <div class="form-container">
       <form>
         <!--Image Selction Difs-->
         <hr />
+        <div id="ingestSelectionLabel">
+          <p>Select Method of Medication Delivery</p>
+        </div>
         <label>
           <div class="imageDivs">
             <input type="radio" name="ingestRadio" value="small" checked />
@@ -50,7 +54,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 export default defineComponent({
-  name: "ComplaintForms",
+  name: "ComplaintView",
 });
 </script>
 
@@ -62,7 +66,11 @@ export default defineComponent({
   display: inline-flex;
 }
 
-/********Form items******
+/********Form items******/
+#ingestSelectionLabel {
+  display: inline-flexbox;
+  text-align: center;
+}
 /* HIDE RADIO */
 [type="radio"] {
   position: absolute;
@@ -133,10 +141,9 @@ input[type="button"]:active {
 }
 
 #textBoxLabelDiv {
-  text-align: left;
-  display: inline-block;
+  text-align: center;
+  display: inline-flexbox;
   flex-direction: column;
-  margin: 50px;
-  padding-block-start: 10px;
+  margin: 10px;
 }
 </style>

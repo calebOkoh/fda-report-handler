@@ -1,0 +1,26 @@
+[
+    {
+        "Manifacturer": "Johnson & Johnson",
+        "DrugName": "Paracetamol",
+        "Date": "2024-07-21",
+        "LotNumber": "JX78910",
+        "Delivery": "",
+        "Description": ""
+    },
+    {
+        "Manifacturer": "Merck & Co.",
+        "DrugName": "Metformin",
+        "Date": "2024-09-03",
+        "LotNumber": "MFT56432",
+        "Delivery": "",
+        "Description": ""
+    },
+    {
+        "Manifacturer": "Novartis",
+        "DrugName": "Omeprazole",
+        "Date": "2024-06-11",
+        "LotNumber": "NP98765",
+        "Delivery": "",
+        "Description": ""
+    }
+]

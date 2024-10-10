@@ -4,7 +4,7 @@
 <script lang="ts">
 import ComplaintForm from "@/components/ComplaintForm.vue";
 import { defineComponent } from "vue";
-
+export const manifacturer = "a";
 export default defineComponent({
   name: "ComplaintView",
   components: {
