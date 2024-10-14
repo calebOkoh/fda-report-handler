@@ -1,5 +1,7 @@
 <template>
+  <!--https://antdv.com/components/menu#components-menu-demo-horizontal-->
   <header>
+    <a-menu v-model:selectedKeys="current" mode="horizontal" :items="items" />
     <nav>
       <router-link to="/">Complaint Form</router-link> |
       <router-link to="/qr">Scan a Code</router-link> |
@@ -8,6 +10,32 @@
     <router-view />
   </header>
 </template>
+
+<script lang="ts" setup>
+/* eslint-disable */
+import { h, ref } from "vue";
+import {
+  MailOutlined,
+  AppstoreOutlined,
+  SettingOutlined,
+} from '@ant-design/icons-vue';
+import { MenuProps } from 'ant-design-vue';
+const current = ref<string[]>(['mail']);
+const items = ref<MenuProps['items']>([
+{
+  key: 'mail',
+  icon: () => h(MailOutlined),
+  label: 'Navigation One',
+  title: 'Navigation One',
+},
+{
+  key: 'app',
+  icon: () => h(AppstoreOutlined),
+  label: 'Navigation Two',
+  title: 'Navigation Two',
+  },
+]);
+</script>
 
 <style>
 header {
