@@ -1,7 +1,7 @@
 <template>
   <!--https://antdv.com/components/menu#components-menu-demo-horizontal-->
   <header>
-    <a-menu v-model:selectedKeys="current" mode="horizontal" :items="items" />
+    <NavigationBar />
     <nav>
       <router-link to="/">Complaint Form</router-link> |
       <router-link to="/qr">Scan a Code</router-link> |
@@ -11,39 +11,22 @@
   </header>
 </template>
 
-<script lang="ts" setup>
-/* eslint-disable */
-import { h, ref } from "vue";
-import {
-  MailOutlined,
-  AppstoreOutlined,
-  SettingOutlined,
-} from '@ant-design/icons-vue';
-import { MenuProps } from 'ant-design-vue';
-const current = ref<string[]>(['mail']);
-const items = ref<MenuProps['items']>([
-{
-  key: 'mail',
-  icon: () => h(MailOutlined),
-  label: 'Navigation One',
-  title: 'Navigation One',
-},
-{
-  key: 'app',
-  icon: () => h(AppstoreOutlined),
-  label: 'Navigation Two',
-  title: 'Navigation Two',
-  },
-]);
+<script lang="ts">
+// import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
+import NavigationBar from "./components/NavigationBar.vue";
+export default defineComponent({
+  components: NavigationBar,
+});
 </script>
 
 <style>
-header {
-  background-color: #0888de; /* Color for the header */
+/* header {
+  background-color: #0888de;
   position: fixed;
   width: 100%;
   max-height: 6%;
-}
+} */
 
 body {
   font-weight: bold;
