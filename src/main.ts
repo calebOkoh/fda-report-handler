@@ -4,7 +4,7 @@ import router from "./router";
 import VueQrcode from "@chenfengyuan/vue-qrcode";
 import { Menu } from "ant-design-vue";
 import "ant-design-vue/dist/reset.css";
-import Antd from "ant-design-vue";
+// import Antd from "ant-design-vue";
 import NavigationBar from "./components/NavigationBar.vue";
 
 const app = createApp(App);

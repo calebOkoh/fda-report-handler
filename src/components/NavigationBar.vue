@@ -2,71 +2,58 @@
   <a-menu v-model:selectedKeys="current" mode="horizontal" :items="items" />
 </template>
 <script lang="ts" setup>
-import { h, ref } from "vue";
+/* eslint-disable */
+import { h, ref, watch, onMounted } from "vue";
 import {
   MailOutlined,
   AppstoreOutlined,
-  SettingOutlined,
 } from "@ant-design/icons-vue";
 import { MenuProps } from "ant-design-vue";
-const current = ref<string[]>(["mail"]);
+
+const current = ref<string[]>([localStorage.getItem("selectedMenu") || "form"]);
+// Watch for changes in current and save them to localStorage
+
+watch(current, (newValue) => {
+  //TODO change newValue to newSelection
+  localStorage.setItem("selectedMenu", newValue[0]);
+});
+
+onMounted(() => {
+  const savedMenu = localStorage.getItem("selectedMenu");
+  if (savedMenu) {
+    current.value = [savedMenu];
+  }
+});
+
 const items = ref<MenuProps["items"]>([
   {
-    key: "mail",
+    key: "form",
     icon: () => h(MailOutlined),
-    label: "Navigation One",
-    title: "Navigation One",
-  },
-  {
-    key: "app",
-    icon: () => h(AppstoreOutlined),
-    label: "Navigation Two",
-    title: "Navigation Two",
-  },
-  {
-    key: "sub1",
-    icon: () => h(SettingOutlined),
-    label: "Navigation Three - Submenu",
-    title: "Navigation Three - Submenu",
-    children: [
-      {
-        type: "group",
-        label: "Item 1",
-        children: [
-          {
-            label: "Option 1",
-            key: "setting:1",
-          },
-          {
-            label: "Option 2",
-            key: "setting:2",
-          },
-        ],
-      },
-      {
-        type: "group",
-        label: "Item 2",
-        children: [
-          {
-            label: "Option 3",
-            key: "setting:3",
-          },
-          {
-            label: "Option 4",
-            key: "setting:4",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: "alipay",
     label: h(
       "a",
-      { href: "https://antdv.com", target: "_blank" },
-      "Navigation Four - Link"
+      { href: "/" },
+      "Complaint Form"
     ),
-    title: "Navigation Four - Link",
+    title: "Complaint Form",
+  },
+  {
+    key: "qr",
+    icon: () => h(AppstoreOutlined),
+    label: h(
+      "a",
+      { href: "/qr" },
+      "Sample QR Codes"
+    ),
+    title: "Sample QR Codes",
+  },
+  {
+    key: "about",
+    label: h(
+      "a",
+      { href: "/about" },
+      "About"
+    ),
+    title: "About",
   },
 ]);
 </script>

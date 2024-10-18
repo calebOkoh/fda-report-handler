@@ -1,4 +1,5 @@
 <template>
+  <NavigationBar />
   <body>
     <p>Scanner</p>
     <hr />
@@ -37,6 +38,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import NavigationBar from "./NavigationBar.vue";
 export default defineComponent({
   name: "QR-Scanner",
 });
