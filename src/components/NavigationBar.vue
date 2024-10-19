@@ -47,6 +47,16 @@ const items = ref<MenuProps["items"]>([
     title: "Sample QR Codes",
   },
   {
+    key: "report",
+    icon: () => h(AppstoreOutlined),
+    label: h(
+      "a",
+      { href: "/report" },
+      "Report"
+    ),
+    title: "Report ",
+  },
+  {
     key: "about",
     label: h(
       "a",

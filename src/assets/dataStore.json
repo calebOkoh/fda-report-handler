@@ -5,7 +5,8 @@
         "Date": "2024-07-21",
         "LotNumber": "JX78910",
         "Delivery": "",
-        "Description": ""
+        "Description": "",
+        "SideEffects": ""
     },
     {
         "Manifacturer": "Merck & Co.",
@@ -13,7 +14,8 @@
         "Date": "2024-09-03",
         "LotNumber": "MFT56432",
         "Delivery": "",
-        "Description": ""
+        "Description": "",
+        "SideEffects": ""
     },
     {
         "Manifacturer": "Novartis",
@@ -21,6 +23,7 @@
         "Date": "2024-06-11",
         "LotNumber": "NP98765",
         "Delivery": "",
-        "Description": ""
+        "Description": "",
+        "SideEffects":""
     }
 ]

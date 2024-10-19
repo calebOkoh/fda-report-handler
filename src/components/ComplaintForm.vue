@@ -35,9 +35,14 @@
 import { reactive, toRaw, ref } from "vue";
 import type { UnwrapRef } from "vue";
 import type { SelectProps } from "ant-design-vue";
-import { SelectValue } from "ant-design-vue/es/select";
+import { useRoute } from "vue-router";
 
-localStorage.setItem("manifacture", "J and J");
+const route = useRoute();
+const currentPath = route.path;
+
+console.log(currentPath);
+
+// localStorage.setItem("manifacture", "J and J");
 
 const manifacturer =
   localStorage.getItem("manifacture") || '"null manifacture"';
