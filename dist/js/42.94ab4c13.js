@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfda_report_handler"]=self["webpackChunkfda_report_handler"]||[]).push([[42],{5042:function(n,a,r){r.r(a),r.d(a,{default:function(){return o}});var e=r(6768);function u(n,a){const r=(0,e.g2)("NavigationBar");return(0,e.uX)(),(0,e.CE)(e.FK,null,[(0,e.Lk)("header",null,[(0,e.bF)(r)]),a[0]||(a[0]=(0,e.Lk)("div",{class:"about"},[(0,e.Lk)("h1",null,"This is an about page")],-1))],64)}var t=r(1241);const l={},s=(0,t.A)(l,[["render",u]]);var o=s}}]);
+//# sourceMappingURL=42.94ab4c13.js.map
