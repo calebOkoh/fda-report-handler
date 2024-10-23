@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import ComplaintView from "@/views/ComplaintView.vue";
 import QRScan from "@/components/QR-Scan.vue";
 import ManiReport from "@/components/ManiReport.vue";
@@ -62,7 +62,7 @@ function calculateRedirectPath(to: any): string {
 }
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 
