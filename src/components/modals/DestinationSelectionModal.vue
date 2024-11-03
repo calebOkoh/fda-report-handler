@@ -19,7 +19,7 @@
         <a-button 
           key="observeStats" 
           type="default" 
-          @click="handleOk"
+          @click="observeStats"
           >Observe Stats</a-button
         >
 
@@ -60,13 +60,14 @@ const toggleTextBox = () => {
 
 
 
-const handleOk = () => {
-  modalText.value = "The modal will be closed after two seconds";
-  confirmLoading.value = true;
-  setTimeout(() => {
-    open.value = false;
-    confirmLoading.value = false;
-  }, 2000);
+const observeStats = () => {
+  router.push("/observeStats")
+  // modalText.value = "The modal will be closed after two seconds";
+  // confirmLoading.value = true;
+  // setTimeout(() => {
+  //   open.value = false;
+  //   confirmLoading.value = false;
+  // }, 2000);
 };
 
 onMounted(() => {

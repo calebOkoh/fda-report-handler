@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import ComplaintView from "@/views/ComplaintView.vue";
 import QRScan from "@/components/QR-Scan.vue";
 import ManiReport from "@/components/ManiReport.vue";
+import ObserveStats from "@/components/ObserveStats.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -23,6 +24,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/about",
     name: "about",
     component: () => import("../views/AboutView.vue"),
+  },
+  {
+    path: "/observeStats",
+    name: "observeStats",
+    component: ObserveStats,
   },
   {
     path: "/:pathMatch(.*)*",

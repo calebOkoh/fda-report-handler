@@ -132,6 +132,7 @@ onMounted(async () => {
       sessionStorage.setItem("name", data.value[code].name);
       sessionStorage.setItem("manifacturer", data.value[code].manifacturer);
       sessionStorage.setItem("lotNumber", data.value[code].lotNumber);
+      sessionStorage.setItem("dateUsed", data.value[code].dateUsed);
     } catch (error) {
       console.error("Error loading JSON in component:", error);
     }
