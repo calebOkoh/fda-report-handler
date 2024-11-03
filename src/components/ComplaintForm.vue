@@ -1,10 +1,7 @@
 <template>
   <body>
     <!--grab var with ref tag ?? -->
-    <p>
-      Enter Complainint information for
-      <b> {{ manifacturer }}'s {{ drugName }} </b>
-    </p>
+    <p>Report a Medication Issue to the FDA</p>
 
     <a-form :model="formState" :label-col="labelCol" :wrapper-col="wrapperCol">
       <a-form-item label="Ingestion Mode ">
@@ -17,6 +14,38 @@
         ></a-select>
       </a-form-item>
 
+      <a-form-item label="Manifacturer">
+        <a-textarea
+          v-model:value="formState.manifacturer"
+          title="Manifacturers Name"
+          :disabled="true"
+        />
+      </a-form-item>
+
+      <a-form-item label="Medication Name">
+        <a-textarea
+          v-model:value="formState.name"
+          title="Medication  Name"
+          :disabled="true"
+        />
+      </a-form-item>
+
+      <a-form-item label="Use By">
+        <a-textarea
+          v-model:value="formState.dateUsed"
+          title="Use By"
+          :disabled="true"
+        />
+      </a-form-item>
+
+      <a-form-item label="Lot Number">
+        <a-textarea
+          v-model:value="formState.lotNumber"
+          title="Lot Number"
+          :disabled="true"
+        />
+      </a-form-item>
+
       <a-form-item label="Description">
         <a-textarea
           v-model:value="formState.desc"
@@ -24,33 +53,8 @@
         />
       </a-form-item>
 
-      <a-form-item label="Manifacturer">
-        <a-textarea
-          v-model:value="formState.manifacturer"
-          title="Manifacturers Name"
-        />
-      </a-form-item>
-
-      <a-form-item label="Date Used">
-        <a-textarea
-          v-model:value="formState.dateUsed"
-          title="Manifacturers Name"
-        />
-      </a-form-item>
-
-      <a-form-item label="Lot Number">
-        <a-textarea
-          v-model:value="formState.lotNumber"
-          title="Manifacturers Name"
-        />
-      </a-form-item>
-
       <a-form-item label="Phone Number">
-        <a-textarea
-          v-model:value="formState.phone"
-          title="Manifacturers Name"
-          :disabled="true"
-        />
+        <a-textarea v-model:value="formState.phone" title="Phone Number" />
       </a-form-item>
 
       <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
@@ -66,20 +70,15 @@ import { reactive, toRaw, ref } from "vue";
 import type { UnwrapRef } from "vue";
 import type { SelectProps } from "ant-design-vue";
 import { useRoute } from "vue-router";
+import { fetchData } from "@/services/dataServices";
+import { Complaint } from "@/types/DataType";
+import { onMounted } from "vue";
 
 const route = useRoute();
 const currentPath = route.path;
 
 console.log(currentPath);
-
-// localStorage.setItem("manifacture", "J and J");
-
-const manifacturer =
-  localStorage.getItem("manifacture") || '"null manifacture"';
-console.log(manifacturer);
-
-const drugName = localStorage.getItem("drugName") || '"null drug name"';
-console.log(drugName);
+const data = ref<Complaint[]>([]);
 
 const deliveryModeOptions = ref<SelectProps["options"]>([
   {
@@ -110,21 +109,35 @@ interface FormState {
   manifacturer: string;
   dateUsed: string;
   lotNumber: string;
-  delivery: boolean;
   type: string[];
   desc: string;
   phone: string;
 }
 const formState: UnwrapRef<FormState> = reactive({
-  selectedDeliveryMode: "",
-  name: "",
-  manifacturer: "",
-  dateUsed: "",
-  lotNumber: "",
-  delivery: false,
+  selectedDeliveryMode: ref<string>(""),
+  name: sessionStorage.getItem("name") || "",
+  manifacturer: ref<string>(sessionStorage.getItem("manifacturer") || ""),
+  dateUsed: sessionStorage.getItem("dateUsed") || "",
+  lotNumber: ref<string>(sessionStorage.getItem("lotNumber") || ""),
   type: [],
   desc: "",
   phone: "",
+});
+
+onMounted(async () => {
+  if (sessionStorage.getItem("code")) {
+    const code: number = +sessionStorage.getItem("code")!;
+    try {
+      data.value = await fetchData();
+      sessionStorage.setItem("name", data.value[code].name);
+      sessionStorage.setItem("manifacturer", data.value[code].manifacturer);
+      sessionStorage.setItem("lotNumber", data.value[code].lotNumber);
+    } catch (error) {
+      console.error("Error loading JSON in component:", error);
+    }
+  } else {
+    console.error("Code error: Hmm somthing is not right here is it now");
+  }
 });
 const onSubmit = () => {
   localStorage.setItem(
@@ -139,6 +152,7 @@ const onSubmit = () => {
     Description  ${localStorage.getItem("desc")}`
   );
 };
+
 const labelCol = { style: { width: "150px" } };
 const wrapperCol = { span: 14 };
 
