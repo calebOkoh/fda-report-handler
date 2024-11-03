@@ -62,8 +62,4 @@ data.forEach(item => {
   display: inline-flex;
   align-items: baseline;
 }
-
-p {
-  font-style: italic;
-}
 </style>

@@ -23,6 +23,36 @@
           title="Describe the Symptoms Experinced"
         />
       </a-form-item>
+
+      <a-form-item label="Manifacturer">
+        <a-textarea
+          v-model:value="formState.manifacturer"
+          title="Manifacturers Name"
+        />
+      </a-form-item>
+
+      <a-form-item label="Date Used">
+        <a-textarea
+          v-model:value="formState.dateUsed"
+          title="Manifacturers Name"
+        />
+      </a-form-item>
+
+      <a-form-item label="Lot Number">
+        <a-textarea
+          v-model:value="formState.lotNumber"
+          title="Manifacturers Name"
+        />
+      </a-form-item>
+
+      <a-form-item label="Phone Number">
+        <a-textarea
+          v-model:value="formState.phone"
+          title="Manifacturers Name"
+          :disabled="true"
+        />
+      </a-form-item>
+
       <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
         <a-button type="primary" @click="onSubmit">Create</a-button>
         <a-button style="margin-left: 10px">Cancel</a-button>
@@ -77,18 +107,24 @@ const handleChange: SelectProps["onChange"] = (value) => {
 interface FormState {
   selectedDeliveryMode: any;
   name: string;
+  manifacturer: string;
+  dateUsed: string;
+  lotNumber: string;
   delivery: boolean;
   type: string[];
-  resource: string;
   desc: string;
+  phone: string;
 }
 const formState: UnwrapRef<FormState> = reactive({
   selectedDeliveryMode: "",
   name: "",
+  manifacturer: "",
+  dateUsed: "",
+  lotNumber: "",
   delivery: false,
   type: [],
-  resource: "",
   desc: "",
+  phone: "",
 });
 const onSubmit = () => {
   localStorage.setItem(

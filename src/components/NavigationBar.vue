@@ -41,7 +41,7 @@ const items = ref<MenuProps["items"]>([
     icon: () => h(AppstoreOutlined),
     label: h(
       "a",
-      { href: "/#qr" },
+      { href: "/qr" },
       "Sample QR Codes"
     ),
     title: "Sample QR Codes",
@@ -51,7 +51,7 @@ const items = ref<MenuProps["items"]>([
     icon: () => h(AppstoreOutlined),
     label: h(
       "a",
-      { href: "/#report" },
+      { href: "/report" },
       "Report"
     ),
     title: "Report ",
@@ -60,7 +60,7 @@ const items = ref<MenuProps["items"]>([
     key: "about",
     label: h(
       "a",
-      { href: "/#about" },
+      { href: "/about" },
       "About"
     ),
     title: "About",
