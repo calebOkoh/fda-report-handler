@@ -83,7 +83,7 @@ const data = [
     lotNumber: "JX78910",
     delivery: "Oral tablets, 500mg per dose",
     description:
-      "Paracetamol is used to treat pain and reduce fever. It is one of the most common medications for headaches, muscle pain, toothaches, and colds.",
+      "I've been taking Paracetamol to relieve my headaches and reduce fever, but I've had a few issues. Sometimes I get an allergic reaction, and I noticed a rash on my skin. I also worry about the risk of liver damage if I take too much.",
     sideEffects: [
       "Allergic reactions",
       "Skin rash",
@@ -91,14 +91,14 @@ const data = [
     ],
   },
   {
-    Manifacturer: "Merck & Co.",
-    DrugName: "Metformin",
-    Date: "2024-09-03",
-    LotNumber: "MFT56432",
-    Delivery: "Oral tablets, 500mg, 850mg, or 1000mg per dose",
-    Description:
-      "Metformin is used to control high blood sugar in people with type 2 diabetes. It helps restore your body's proper response to insulin and decreases the amount of sugar your liver makes.",
-    SideEffects: ["Nausea", "Diarrhea", "Lactic acidosis"],
+    manifacturer: "Merck & Co.",
+    drugName: "Metformin",
+    date: "2024-09-03",
+    lotNumber: "MFT56432",
+    delivery: "Oral tablets, 500mg, 850mg, or 1000mg per dose",
+    description:
+      "I’m taking Metformin for my blood sugar, but it’s not without its issues. I often feel nauseous and experience diarrhea. The possibility of lactic acidosis also worries me.",
+    sideEffects: ["Nausea", "Diarrhea", "Lactic acidosis"],
   },
   {
     manifacturer: "Novartis",
@@ -107,7 +107,7 @@ const data = [
     lotNumber: "NP98765",
     delivery: "Oral delayed-release capsules, 20mg or 40mg per dose",
     description:
-      "Omeprazole is used to treat certain stomach and esophagus problems such as acid reflux and ulcers. It works by decreasing the amount of acid the stomach makes.",
+      "I take Omeprazole for my acid reflux, but it's not perfect. It often gives me headaches and stomach pain, and I'm concerned it could lead to a vitamin B12 deficiency.",
     sideEffects: ["Headache", "Stomach pain", "Vitamin B12 deficiency"],
   },
   {
@@ -117,7 +117,7 @@ const data = [
     lotNumber: "PF45678",
     delivery: "Oral tablets, 200mg or 400mg per dose",
     description:
-      "Ibuprofen is a nonsteroidal anti-inflammatory drug (NSAID) used to reduce fever and treat pain or inflammation.",
+      "Ibuprofen helps with my inflammation, but I've noticed some stomach pain and nausea. I'm also aware of the increased risk of heart attack that comes with taking it.",
     sideEffects: ["Stomach pain", "Nausea", "Increased risk of heart attack"],
   },
   {
@@ -127,7 +127,7 @@ const data = [
     lotNumber: "AZ12345",
     delivery: "Oral tablets, 325mg per dose",
     description:
-      "Aspirin is used to reduce fever, pain, and inflammation. It is also used to prevent blood clots in patients with a history of heart attacks or strokes.",
+      "Aspirin helps with my pain and inflammation, but I worry about the gastrointestinal bleeding it can cause. I also have to be careful about allergic reactions and the risk of Reye's syndrome in children.",
     sideEffects: [
       "Gastrointestinal bleeding",
       "Allergic reactions",
@@ -141,7 +141,7 @@ const data = [
     lotNumber: "RCH20211",
     delivery: "Oral capsules, 75mg per dose",
     description:
-      "Tamiflu is an antiviral medication used to treat and prevent influenza (flu).",
+      "I take Tamiflu to prevent the flu, but it sometimes causes me nausea and even vomiting. I’ve also experienced occasional delirium, which is unsettling.",
     sideEffects: ["Nausea", "Vomiting", "Delirium"],
   },
   {
@@ -151,7 +151,7 @@ const data = [
     lotNumber: "GSK33112",
     delivery: "Oral capsules, 500mg per dose",
     description:
-      "Amoxicillin is an antibiotic used to treat various bacterial infections such as pneumonia, bronchitis, and infections of the ear, throat, and urinary tract.",
+      "Amoxicillin works well for my infections, but I’ve had some unpleasant side effects like diarrhea, rashes, and occasional allergic reactions.",
     sideEffects: ["Diarrhea", "Rash", "Allergic reactions"],
   },
   {
@@ -161,7 +161,7 @@ const data = [
     lotNumber: "BYR55621",
     delivery: "Oral tablets, 500mg per dose",
     description:
-      "Ciprofloxacin is an antibiotic used to treat bacterial infections such as urinary tract infections, respiratory infections, and skin infections.",
+      "Ciprofloxacin helps with my infections, but I sometimes feel nauseous, and the risk of tendon rupture and dizziness can be concerning.",
     sideEffects: ["Nausea", "Tendon rupture", "Dizziness"],
   },
   {
@@ -171,7 +171,7 @@ const data = [
     lotNumber: "SNF78801",
     delivery: "Injectable insulin, 100 units/mL",
     description:
-      "Lantus is a long-acting insulin used to treat diabetes mellitus in adults and children.",
+      "Lantus helps manage my diabetes, but I often worry about hypoglycemia. I also get injection site reactions and sometimes experience weight gain.",
     sideEffects: ["Hypoglycemia", "Injection site reactions", "Weight gain"],
   },
   {
@@ -181,7 +181,7 @@ const data = [
     lotNumber: "LLY12344",
     delivery: "Injectable insulin, 100 units/mL",
     description:
-      "Insulin Lispro is a fast-acting insulin used to control high blood sugar in people with diabetes.",
+      "Insulin Lispro is fast-acting for my diabetes, but I occasionally experience hypoglycemia and have some allergic reactions. I've also noticed some weight gain.",
     sideEffects: ["Hypoglycemia", "Allergic reactions", "Weight gain"],
   },
   {
@@ -191,7 +191,7 @@ const data = [
     lotNumber: "BI98776",
     delivery: "Inhalation capsules, 18mcg per dose",
     description:
-      "Spiriva is used to treat chronic obstructive pulmonary disease (COPD) by helping to open airways and make breathing easier.",
+      "Spiriva helps me breathe easier with COPD, but it does cause dry mouth and constipation. I also get a scratchy feeling in my throat sometimes.",
     sideEffects: ["Dry mouth", "Constipation", "Throat irritation"],
   },
   {
@@ -201,7 +201,7 @@ const data = [
     lotNumber: "TVA90876",
     delivery: "Inhaler, 90mcg per actuation",
     description:
-      "Albuterol is a bronchodilator used to treat or prevent bronchospasm in people with reversible obstructive airway disease.",
+      "Albuterol helps with my bronchospasms, but it does make me feel shaky, and my heart races sometimes. I also get headaches from time to time.",
     sideEffects: ["Shakiness", "Fast heartbeat", "Headache"],
   },
 ];
