@@ -7,19 +7,25 @@ import { h, ref, watch, onMounted } from "vue";
 import {
   MailOutlined,
   AppstoreOutlined,
+  ArrowsAltOutlined,
+  HeatMapOutlined,
+  BarChartOutlined,
+  QrcodeOutlined,
+  FormOutlined,
+  QuestionCircleOutlined,
 } from "@ant-design/icons-vue";
 import { MenuProps } from "ant-design-vue";
 
-const current = ref<string[]>([localStorage.getItem("selectedMenu") || "form"]);
+const current = ref<string[]>([sessionStorage.getItem("selectedMenu") || "form"]);
 // Watch for changes in current and save them to localStorage
 
 watch(current, (newValue) => {
   //TODO change newValue to newSelection
-  localStorage.setItem("selectedMenu", newValue[0]);
+  sessionStorage.setItem("selectedMenu", newValue[0]);
 });
 
 onMounted(() => {
-  const savedMenu = localStorage.getItem("selectedMenu");
+  const savedMenu = sessionStorage.getItem("selectedMenu");
   if (savedMenu) {
     current.value = [savedMenu];
   }
@@ -28,7 +34,7 @@ onMounted(() => {
 const items = ref<MenuProps["items"]>([
   {
     key: "form",
-    icon: () => h(MailOutlined),
+    icon: () => h(FormOutlined),
     label: h(
       "a",
       { href: "/" },
@@ -38,7 +44,7 @@ const items = ref<MenuProps["items"]>([
   },
   {
     key: "qr",
-    icon: () => h(AppstoreOutlined),
+    icon: () => h(QrcodeOutlined),
     label: h(
       "a",
       { href: "/qr" },
@@ -48,16 +54,37 @@ const items = ref<MenuProps["items"]>([
   },
   {
     key: "report",
-    icon: () => h(AppstoreOutlined),
-    label: h(
+    icon: () => h(BarChartOutlined),
+    // label: h(
+    //   "a",
+    //   { href: "/report" },
+    //   "Report"
+    // ),
+    title: "Report",
+    label: "Reports",
+    children: [
+      {
+        label: h(
       "a",
       { href: "/report" },
-      "Report"
+      "Manufacturer Report"
     ),
-    title: "Report ",
+        key:"Manufacturer Report"
+      },
+      {
+        label: h(
+      "a",
+      { href: "/observeStats" },
+      "Observe Stats"
+    ),
+        key: "observeStats"
+      }
+    ]
+
   },
   {
     key: "about",
+    icon: h(QuestionCircleOutlined),
     label: h(
       "a",
       { href: "/about" },
