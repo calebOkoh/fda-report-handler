@@ -3,7 +3,7 @@
   <div>
     <a-modal
       v-model:open="open"
-      title="Welcome to the FDA Medication Reports Portal"
+      title="Welcome to the Medication Reports Portal"
       :confirm-loading="confirmLoading"
       :maskClosable="false"
       :closable="false"

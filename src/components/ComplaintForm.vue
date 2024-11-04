@@ -1,7 +1,7 @@
 <template>
   <body>
     <!--grab var with ref tag ?? -->
-    <p>Report a Medication Issue to the FDA</p>
+    <p>Complete the Medication Complaint Form</p>
 
     <a-form :model="formState" :label-col="labelCol" :wrapper-col="wrapperCol">
       <a-form-item label="Ingestion Mode ">

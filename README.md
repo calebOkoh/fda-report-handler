@@ -1,4 +1,4 @@
-# fda-report-handler
+# report-handler
 
 ## Project setup
 ```
